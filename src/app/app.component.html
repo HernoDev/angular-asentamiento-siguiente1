@@ -1,0 +1,29 @@
+
+<H3> Titulo: {{concavidad}}</H3>
+<div class="container">
+<div class="row">
+    <div class="col-md-4">
+        <label>0</label>
+        <textarea id="area0"></textarea>
+        <button (click)="copiaal1()" class="btn btn-primary" >-> 1</button>
+        <button (click)="copiaal2()" class="btn btn-warning" >-> 2</button>
+        <button (click)="borrartexto($event)" class="btn btn-danger"  >Limpiar</button>
+    </div>
+    <div class="col-md-4">
+        <label>1</label>
+        <subcomponente1 entrada1="{{desde1}}"
+        (emisor0)="recibir0($event)"
+        (emisor2)="recibir2($event)"
+         >
+        </subcomponente1>
+    </div>
+    <div class="col-md-4">
+        <label>2</label>
+        <subcomponente2 entrada2="{{desde2}}"
+        (emisor0)="recibir0($event)"
+        (emisor1)="recibir1($event)"
+        >          
+        </subcomponente2>
+    </div>
+</div>
+</div>
