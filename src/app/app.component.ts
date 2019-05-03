@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {DatosService} from './datos.service';
+
 
 @Component({
   selector: 'componenteprincipal',
@@ -9,10 +11,17 @@ export class AppComponent  {
   desde0 : string;
   desde1 : string;
   desde2 : string;
+  datos: DatosService;
+  titulo : string;
 
-  ngOnInit() {
+  constructor(public losdatos : DatosService){
+
+  }
+
+  ngOnInit( ) {
     this.desde1 = 'iniciado';
     this.desde2 = 'iniciado';
+    this.titulo = this.losdatos.getDatos();
   }
 
   copiaal1() {
@@ -28,6 +37,7 @@ export class AppComponent  {
   borrartexto(event) {
       let t = document.querySelector('#area0');
       t.value = '';
+
   }
 
   recibir0(event) {
