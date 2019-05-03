@@ -10,7 +10,12 @@ export class RepartidorService {
 
   constructor() { }
 
-  actualizar(): any {
-    return 'completado desde adentro';
+  mensaje(): any {
+    return 'mensaje estatico';
   }
+
+  buzon(): Observable<any> {
+    return this.repartidor.next('mensaje en movimiento');
+  }
+
 }

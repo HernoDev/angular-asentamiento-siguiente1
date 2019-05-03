@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {DatosService} from './datos.service';
 import { RepartidorService } from './repartidor.service';
-
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'componenteprincipal',
@@ -14,6 +14,7 @@ export class AppComponent  {
   desde2 : string;
   datos: DatosService;
   titulo : string;
+  arribo : Observable<any>;
 
   constructor(public losdatos : DatosService, public reparto: RepartidorService){
 
@@ -38,8 +39,12 @@ export class AppComponent  {
   borrartexto(event) {
       let t = document.querySelector('#area0');
       t.value = '';
-      t.value = this.reparto.actualizar();
-
+      t.value = this.reparto.mensaje();
+this.desde1 =  'lo vemos';
+      this.arribo = this.reparto.buzon;
+      this.arribo.subscribe( valor => {
+        this.desde1 =  valor;
+      });
   }
 
   recibir0(event) {
