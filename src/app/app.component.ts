@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {DatosService} from './datos.service';
+import { RepartidorService } from './repartidor.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AppComponent  {
   datos: DatosService;
   titulo : string;
 
-  constructor(public losdatos : DatosService){
+  constructor(public losdatos : DatosService, public reparto: RepartidorService){
 
   }
 
@@ -37,6 +38,7 @@ export class AppComponent  {
   borrartexto(event) {
       let t = document.querySelector('#area0');
       t.value = '';
+      t.value = this.reparto.actualizar();
 
   }
 
