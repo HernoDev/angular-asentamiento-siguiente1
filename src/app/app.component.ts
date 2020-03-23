@@ -47,20 +47,20 @@ this.desde1 =  'lo vemos';
       });
   }
 
-  recibir0(event) {
+  recibir0(message) {
       let t0 = document.querySelector('#area0');
       console.log('AppComponent::recibir0 ' + t0.value);
-      t0.value = event;
+      t0.value = message;
   }
 
-  recibir1(event) {
+  recibir1(message) {
       console.log('AppComponent::recibir1 ');
-      this.desde1 = event;
+      this.desde1 = message;
   }
 
-  recibir2(event) {
+  recibir2(message) {
       console.log('AppComponent::recibir2 ');
-      this.desde2 = event;
+      this.desde2 = message;
   }
 
 
